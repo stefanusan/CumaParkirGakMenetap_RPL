@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.parkir2.FXMLController">
+   <children>
+      <Pane layoutX="-1.0" maxHeight="498.0" maxWidth="951.0" prefHeight="498.0" prefWidth="951.0" style="-fx-background-color: #FAF59E;">
+         <children>
+            <ImageView fitHeight="482.0" fitWidth="362.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@1571399651580.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#3d4a67" layoutX="555.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MASUK" textAlignment="CENTER" wrappingWidth="263.0">
+               <font>
+                  <Font name="System Bold" size="68.0" />
+               </font>
+            </Text>
+            <HBox layoutX="555.0" layoutY="160.0" prefHeight="41.0" prefWidth="263.0">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="SOMETIMES">
+                     <image>
+                        <Image url="@username.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <TextField fx:id="Uname" prefHeight="41.0" prefWidth="263.0" promptText="Nama Pengguna" style="-fx-border-color: #3D4A67; -fx-border-width: 0px 0px 1px 0px; -fx-background-color: transparant; -fx-text-inner-color: #3D4A67;" />
+               </children>
+            </HBox>
+            <HBox layoutX="554.0" layoutY="209.0" prefHeight="36.0" prefWidth="263.0">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@key.png" />
+                     </image>
+                  </ImageView>
+                  <PasswordField fx:id="Pass" prefHeight="40.0" prefWidth="263.0" promptText="Kata Sandi" style="-fx-background-color: transparant; -fx-border-width: 0px 0px 1px 0px; -fx-border-color: #3D4A67; -fx-text-inner-color: #3D4A67;" />
+               </children>
+            </HBox>
+            <Button fx:id="btnLogin" layoutX="554.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="25.0" prefWidth="263.0" style="-fx-background-color: #3D4A67; -fx-background-radius: 100;" text="masuk" textAlignment="CENTER" textFill="#faf59e" />
+            <Text fill="#faf59e" layoutX="152.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUMAN PARKIR&#10;GAK MENETAP&#10;" textAlignment="CENTER">
+               <font>
+                  <Font name="Agency FB Bold" size="31.0" />
+               </font>
+            </Text>
+            <Label fx:id="lblerror" layoutX="556.0" layoutY="385.0" prefHeight="17.0" prefWidth="263.0" textAlignment="CENTER" textFill="#ff2d2d" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

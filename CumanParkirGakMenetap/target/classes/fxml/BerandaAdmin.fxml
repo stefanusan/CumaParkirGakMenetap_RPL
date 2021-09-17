@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.ukdw.parkir2.BerandaAdminController">
+     <children>
+      <Pane layoutX="271.0" prefHeight="503.0" prefWidth="670.0" style="-fx-background-color: #3D4A67;">
+         <children>
+            <Pane fx:id="pnlLaporan" layoutX="1.0" layoutY="-1.0" onInputMethodTextChanged="#showChartUang" onKeyPressed="#showChartUang" onKeyReleased="#showChartUang" onKeyTyped="#showChartUang" prefHeight="503.0" prefWidth="670.0" style="-fx-background-color: #3D4A67;">
+               <children>
+                  <Label layoutX="27.0" layoutY="14.0" prefHeight="42.0" prefWidth="270.0" text="L A P O R A N" textFill="#faf59e">
+                     <font>
+                        <Font name="Calibri Bold" size="38.0" />
+                     </font>
+                  </Label>
+                  <TabPane layoutX="16.0" layoutY="72.0" prefHeight="417.0" prefWidth="644.0" style="-fx-color: #faf59e;" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Jumlah Kendaraan ">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <BarChart fx:id="grafikKend" layoutX="2.0" layoutY="81.0" prefHeight="288.0" prefWidth="623.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" tickLabelFill="#faf59e" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" tickLabelFill="#faf59e" />
+                                      </yAxis>
+                                    </BarChart>
+                                    <DatePicker fx:id="searchTgl" layoutX="29.0" layoutY="26.0" onAction="#showGrafKend" onInputMethodTextChanged="#showGrafKend" onKeyPressed="#showGrafKend" onKeyReleased="#showGrafKend" onKeyTyped="#showGrafKend" promptText="cari tanggal" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Jumlah Pemasukan">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <LineChart fx:id="grafikUang" layoutX="11.0" layoutY="81.0" prefHeight="298.0" prefWidth="624.0" style="-fx-border-color: #FAF59E;">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" tickLabelFill="#faf59e" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" tickLabelFill="#faf59e" />
+                                      </yAxis>
+                                    </LineChart>
+                                    <TextField fx:id="searchThn" layoutX="8.0" layoutY="26.0" onInputMethodTextChanged="#showChartUang" onKeyPressed="#showChartUang" onKeyReleased="#showChartUang" onKeyTyped="#showChartUang" prefHeight="25.0" prefWidth="146.0" promptText="cari tahun" style="-fx-background-color: transparant; -fx-border-color: #faf59e; -fx-text-inner-color: #faf59e;" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children></Pane>
+
+            <Pane fx:id="pnlHapusPetugas" prefHeight="503.0" prefWidth="670.0" style="-fx-background-color: #3D4A67;">
+               <children>
+                  <Label text="HAPUS PETUGAS" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Calibri Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="26.0" layoutY="146.0" prefHeight="282.0" prefWidth="257.0">
+                     <children>
+                        <Label fx:id="lblUser" prefHeight="30.0" prefWidth="261.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblLevel" prefHeight="30.0" prefWidth="260.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblNama_Depan" prefHeight="32.0" prefWidth="270.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblNama_Belakang" prefHeight="39.0" prefWidth="284.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblAlamat" prefHeight="37.0" prefWidth="270.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="lblContact" prefHeight="34.0" prefWidth="274.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox layoutX="14.0" layoutY="76.0" prefHeight="54.0" prefWidth="407.0" style="-fx-border-color: #fff;">
+                     <children>
+                        <TextField fx:id="txtCari" prefHeight="45.0" prefWidth="346.0" promptText="Cari" style="-fx-background-color: #3D4A67; -fx-text-inner-color: #ed7725;">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnCariAkun" mnemonicParsing="false" onAction="#btnCariAkun" prefHeight="50.0" prefWidth="47.0" style="-fx-background-color: #3D4A67;">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@loupe.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnHapusAkun" layoutX="585.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnHapusAkun" prefHeight="46.0" prefWidth="63.0" style="-fx-background-color: #3D4A67;">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@recycle-bin.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+
+           
+            
+            <Pane fx:id="pnlTambahPetugas" prefHeight="503.0" prefWidth="670.0" style="-fx-background-color: #3D4A67;">
+               <children>
+                  <Label layoutX="20.0" layoutY="-6.0" text="T A M B A H     P E T U G A S" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Calibri Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="336.0" layoutY="59.0" text="Nama Belakang" textFill="#f5f5ef">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="59.0" text="Nama Depan" textFill="#f5f5ef">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNamaDepan" layoutX="32.0" layoutY="79.0" opacity="0.9" prefHeight="20.0" prefWidth="250.0" promptText="Nama Depan" style="-fx-background-color: #f5f5ef;" />
+                  <TextField fx:id="txtNamaBelakang" layoutX="335.0" layoutY="79.0" opacity="0.9" prefHeight="20.0" prefWidth="250.0" promptText="Nama Belakang" style="-fx-background-color: #f5f5ef;" />
+                  <Label layoutX="32.0" layoutY="124.0" text="Nama Pengguna" textFill="#f5f5ef">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtUser" layoutX="32.0" layoutY="144.0" opacity="0.9" prefHeight="20.0" prefWidth="250.0" promptText="Nama Pengguna" style="-fx-background-color: #f5f5ef;" />
+                  <Label layoutX="32.0" layoutY="192.0" text="Kata Sandi" textFill="#f5f5ef">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="259.0" text="Status" textFill="#f5f5ef">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="330.0" text="Alamat" textFill="#f5f5ef">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAlamat" layoutX="32.0" layoutY="350.0" opacity="0.9" prefHeight="20.0" prefWidth="250.0" promptText="Alamat" style="-fx-background-color: #f5f5ef;" />
+                  <Label layoutX="32.0" layoutY="398.0" text="Nomor Hp" textFill="#f5f5ef">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtContact" layoutX="32.0" layoutY="418.0" opacity="0.9" prefHeight="20.0" prefWidth="250.0" promptText="Nomor Hp" style="-fx-background-color: #f5f5ef;" />
+                  <Button fx:id="btnSubmitTambah" layoutX="594.0" layoutY="438.0" mnemonicParsing="false" onAction="#btnSubmitTambah" prefHeight="39.0" prefWidth="43.0" style="-fx-background-color: transparant;">
+                     <graphic>
+                        <ImageView fx:id="gbrSave" fitHeight="39.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@floppy-disk-interface-symbol-for-save-option-button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <PasswordField fx:id="txtPass" layoutX="32.0" layoutY="212.0" opacity="0.9" prefHeight="20.0" prefWidth="250.0" promptText="Kata Sandi" />
+                  <RadioButton fx:id="rbAdmin" layoutX="32.0" layoutY="289.0" mnemonicParsing="false" text="Admin" textFill="WHITE" />
+                  <RadioButton fx:id="rbPetugas" layoutX="335.0" layoutY="289.0" mnemonicParsing="false" text="Petugas" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlSunting" prefHeight="501.0" prefWidth="670.0" style="-fx-background-color: #3D4A67;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4a67" height="180.0" layoutX="5.0" layoutY="75.0" stroke="#faf59e" strokeType="INSIDE" width="644.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4a67" height="180.0" layoutX="5.0" layoutY="302.0" stroke="#faf59e" strokeType="INSIDE" width="644.0" />
+                  <ImageView fitHeight="119.0" fitWidth="160.0" layoutX="32.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@car.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="119.0" fitWidth="160.0" layoutX="31.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@transportation.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="279.0" layoutY="88.0" text="Tarif" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="469.0" layoutY="88.0" text="Slot Parkir" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="279.0" layoutY="318.0" text="Tarif" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="469.0" layoutY="318.0" text="Slot Parkir" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="55.0" prefWidth="312.0" text="S U N T I N G" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Calibri Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtTarifSelanjutnya" layoutX="238.0" layoutY="195.0" prefHeight="27.0" prefWidth="146.0" promptText="jam berikutnya" style="-fx-background-color: transparant; -fx-border-color: #ed7725; -fx-text-inner-color: #ed7725;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtTarifAwal" layoutX="238.0" layoutY="135.0" prefHeight="27.0" prefWidth="146.0" promptText="tarif awal" style="-fx-background-color: transparant; -fx-border-color: #ed7725; -fx-text-inner-color: #ed7725;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtTarifSelanjutnyaMotor" layoutX="238.0" layoutY="425.0" prefHeight="27.0" prefWidth="146.0" promptText="jam berikutnya" style="-fx-background-color: transparant; -fx-border-color: #ed7725; -fx-text-inner-color: #ed7725;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtTarifAwalMotor" layoutX="238.0" layoutY="365.0" prefHeight="27.0" prefWidth="146.0" promptText="tarif awal" style="-fx-background-color: transparant; -fx-border-color: #ed7725; -fx-text-inner-color: #ed7725;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtSlotMobil" layoutX="460.0" layoutY="138.0" prefHeight="27.0" prefWidth="140.0" promptText="slot parkir" style="-fx-background-color: transparant; -fx-border-color: #ed7725#ed7725; -fx-text-inner-color: #ed7725;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="382.0" layoutY="133.0" mnemonicParsing="false" onAction="#btnSaveTarifAwalMobil" prefHeight="27.0" prefWidth="35.0" style="-fx-background-color: transparant;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tick-inside-circle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="382.0" layoutY="192.0" mnemonicParsing="false" onAction="#btnSaveTarifSelanjutnyaMobil" prefHeight="27.0" prefWidth="35.0" style="-fx-background-color: transparant;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tick-inside-circle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="txtSlotMotor" layoutX="460.0" layoutY="365.0" prefHeight="27.0" prefWidth="140.0" promptText="slot parkir" style="-fx-background-color: transparant; -fx-border-color: #ed7725#ed7725; -fx-text-inner-color: #ed7725;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="599.0" layoutY="134.0" mnemonicParsing="false" onAction="#btnSlotMobil" prefHeight="32.0" prefWidth="33.0" style="-fx-background-color: transparant;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tick-inside-circle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="598.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnSlotMotor" prefHeight="27.0" prefWidth="35.0" style="-fx-background-color: transparant;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tick-inside-circle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="382.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnTarifAwalMotor" prefHeight="27.0" prefWidth="35.0" style="-fx-background-color: transparant;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tick-inside-circle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="382.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnTarifSelanjutnyaMotor" prefHeight="27.0" prefWidth="35.0" style="-fx-background-color: transparant;">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@tick-inside-circle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+        
+                        <Pane fx:id="pnlHapusPetugas" prefHeight="503.0" prefWidth="670.0" style="-fx-background-color: #3D4A67;">
+               <children>
+                  <Label text="HAPUS PETUGAS" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Calibri Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="226.0" layoutY="172.0" prefHeight="282.0" prefWidth="257.0">
+                     <children>
+                        <Label fx:id="lblUser" prefHeight="30.0" prefWidth="257.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblLevel" prefHeight="30.0" prefWidth="261.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblNama_Depan" prefHeight="30.0" prefWidth="261.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblNama_Belakang" prefHeight="30.0" prefWidth="261.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblAlamat" prefHeight="30.0" prefWidth="261.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblContact" prefHeight="30.0" prefWidth="261.0" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox layoutX="14.0" layoutY="76.0" prefHeight="54.0" prefWidth="407.0" style="-fx-border-color: #fff;">
+                     <children>
+                        <TextField fx:id="txtCari" prefHeight="45.0" prefWidth="346.0" promptText="Cari" style="-fx-background-color: #3D4A67; -fx-text-inner-color: #ed7725;">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnCariAkun" mnemonicParsing="false" onAction="#btnCariAkun" prefHeight="50.0" prefWidth="47.0" style="-fx-background-color: #3D4A67;">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@loupe.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnHapusAkun" layoutX="585.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnHapusAkun" prefHeight="46.0" prefWidth="63.0" style="-fx-background-color: #3D4A67;">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@recycle-bin.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text fill="#ed7725" layoutX="36.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username         :" wrappingWidth="246.1304931640625">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ed7725" layoutX="33.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama Belakang:" wrappingWidth="255.6259765625">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ed7725" layoutX="34.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama Depan    :" wrappingWidth="233.4388427734375">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ed7725" layoutX="35.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level                 :" wrappingWidth="216.833251953125">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ed7725" layoutX="35.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontak              :" wrappingWidth="203.5">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ed7725" layoutX="34.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Alamat              :" wrappingWidth="218.1666259765625">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            
+            <Pane fx:id="pnlBeranda" prefHeight="503.0" prefWidth="670.0" style="-fx-background-color: #3D4A67;">
+               <children>
+                  <Label layoutX="14.0" layoutY="4.0" prefHeight="73.0" prefWidth="290.0" text="B E R A N D A" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Calibri Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4a67" height="233.0" layoutX="14.0" layoutY="252.0" opacity="0.5" stroke="#faf59e" strokeType="INSIDE" width="300.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3d4a67" height="233.0" layoutX="349.0" layoutY="252.0" opacity="0.5" stroke="#faf59e" strokeType="INSIDE" width="300.0" />
+                  <Label fx:id="slotMotor" layoutX="164.0" layoutY="397.0" text="150" textFill="#ed7725">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="slotMobil" layoutX="510.0" layoutY="397.0" text="150" textFill="#ed7725">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="kenMasuk" layoutX="23.0" layoutY="405.0" text="Kapasitas:" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="87.0" fitWidth="81.0" layoutX="33.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@transportation.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="87.0" fitWidth="81.0" layoutX="358.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@car.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="kenMasuk1" layoutX="119.0" layoutY="296.0" text="Rp.           / sejam pertama" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="kenMasuk11" layoutX="449.0" layoutY="296.0" text="Rp.           / sejam pertama" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="kenMasuk111" layoutX="449.0" layoutY="326.0" text="Rp.           / sejam selanjutnya" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="kenMasuk112" layoutX="119.0" layoutY="326.0" text="Rp.           / sejam selanjtnya" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tarifAwalMotor" layoutX="147.0" layoutY="294.0" text="2000" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tarifSelanjutnyaMotor" layoutX="147.0" layoutY="324.0" text="1000" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tarifAwalMobil" layoutX="477.0" layoutY="294.0" text="3000" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tarifSelanjutnyaMobil" layoutX="477.0" layoutY="324.0" text="1000" textFill="#ed7725">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="kenMasuk2" layoutX="360.0" layoutY="405.0" text="Kapasitas:" textFill="#f5f5ef">
+                     <font>
+                        <Font name="Arial Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane id="paneMenu" fx:id="paneMenu" layoutX="-2.0" prefHeight="503.0" prefWidth="257.0" style="-fx-background-color: #FAF59E;">
+         <children>
+            <ImageView fitHeight="94.0" fitWidth="103.0" layoutX="14.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@man.png" />
+               </image>
+            </ImageView>
+            <Button id="btnBeranda" fx:id="btnBeranda" alignment="BASELINE_LEFT" layoutY="175.0" mnemonicParsing="false" onAction="#btnBeranda" prefHeight="34.0" prefWidth="257.0" style="-fx-background-color: #FAF59E;" text="Beranda" textFill="#3d4a67">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@homepage.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button id="btnTambah" fx:id="btnTambah" alignment="BASELINE_LEFT" layoutX="2.0" layoutY="227.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="37.0" prefWidth="245.0" style="-fx-background-color: #FAF59E;" text="Tambah Petugas" textFill="#3d4a67">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@add-user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btnHapus" fx:id="btnHapus" alignment="BASELINE_LEFT" layoutX="3.0" layoutY="274.0" mnemonicParsing="false" onAction="#btnHapus" prefHeight="37.0" prefWidth="240.0" style="-fx-background-color: #FAF59E;" text="Hapus Petugas" textFill="#3d4a67">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@remove-user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btnLaporan" fx:id="btnLaporan" alignment="BASELINE_LEFT" layoutX="4.0" layoutY="360.0" mnemonicParsing="false" onAction="#btnLaporan" prefHeight="37.0" prefWidth="242.0" style="-fx-background-color: #FAF59E;" text="Laporan" textFill="#3d4a67">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@document.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btnKeluar" fx:id="btnKeluar" alignment="BASELINE_LEFT" layoutX="6.0" layoutY="406.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="37.0" prefWidth="244.0" style="-fx-background-color: #FAF59E;" text="Keluar" textFill="#3d4a67">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="btnLaporan" fx:id="btnSunting" alignment="BASELINE_LEFT" layoutX="5.0" layoutY="317.0" mnemonicParsing="false" onAction="#bntSunting" prefHeight="37.0" prefWidth="242.0" style="-fx-background-color: #FAF59E;" text="Sunting" textFill="#3d4a67">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="lblNamaBeranda" layoutX="117.0" layoutY="90.0" prefHeight="30.0" prefWidth="119.0" textAlignment="RIGHT" textFill="#3d4a67">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNamaBeranda1" layoutX="117.0" layoutY="66.0" prefHeight="30.0" prefWidth="119.0" text="ADMIN" textFill="#3d4a67">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
